@@ -5,6 +5,6 @@ require 'completed_line'
 require 'config'
 require 'dir'
 require 'log_file'
+require 'md5'
 require 'uri'
 require 'url'
-

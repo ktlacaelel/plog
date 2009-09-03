@@ -4,14 +4,13 @@ class CompletedLineTest < Test::Unit::TestCase
 
   def setup
     @valid_line = 'Completed in 5ms (View: 4, DB: 1) | 200 OK [http://www.example.com/users/12972]'
-    @valid_url = 'http://www.example.com/users/12972'
-    @valid_total_time = 5
-    @valid_view_time = 4
     @valid_db_time = 1
+    @valid_view_time = 4
+    @valid_total_time = 5
   end
 
   def teardown
-    @valid_line, @valid_url = nil
+    @valid_line = nil
   end
 
   should 'read a valid completed line' do

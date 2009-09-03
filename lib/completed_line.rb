@@ -6,7 +6,7 @@ module Plog
     URL_REGEX = /([^\[]+)(\[)([^\]]+)(.*)/
 
     def self.url
-      URI.parse(@url)
+      URL.new(@url)
     end
 
     def self.read!(string_line)
