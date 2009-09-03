@@ -2,8 +2,23 @@ require 'test_helper'
 
 class CompletedLineTest < Test::Unit::TestCase
 
-  should "probably rename this file and start testing for real" do
-    flunk "hey buddy, you should probably rename this file and start testing for real"
+  def setup
+    @valid_line = 'Completed in 5ms (View: 4, DB: 1) | 200 OK [http://www.example.com/users/12972]'
+    @valid_url = 'http://www.example.com/users/12972'
+    @valid_total_time = 5
+    @valid_view_time = 4
+    @valid_db_time = 1
+  end
+
+  def teardown
+    @valid_line, @valid_url = nil
+  end
+
+  should 'read a valid completed line' do
+    Plog::CompletedLine.read! @valid_line
+    assert_equal @valid_view_time, Plog::CompletedLine.view_time
+    assert_equal @valid_db_time, Plog::CompletedLine.db_time
+    assert_equal @valid_total_time, Plog::CompletedLine.total_time
   end
 
 end
