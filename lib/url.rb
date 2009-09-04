@@ -4,7 +4,7 @@ module Plog
 
     def initialize(url)
       @url = url
-      @obj = URI.parse(url)
+      @obj = URI.parse(URI.escape url)
     end
 
     def to_s
@@ -12,9 +12,9 @@ module Plog
     end
 
     def simplify
-      @simplify_url = @url
-      simplifiers.each { |k, v| @simplify_url.gsub!(k, v) if k =~ @simplify_url }
-      @simplify_url
+      simplify_url = @url.dup
+      simplifiers.each { |k, v| simplify_url.gsub!(k, v) if k =~ simplify_url }
+      simplify_url
     end
 
     def hashify
