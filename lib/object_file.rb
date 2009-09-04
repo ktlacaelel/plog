@@ -83,6 +83,61 @@ module Plog
       end
     end
 
+    def export_settings
+      [
+        [@total_hits, [:left, 10]],
+        [@total_time, [:left, 10]],
+        [avg_total_time, [:left, 10]],
+        [@db_time, [:left, 10]],
+        [avg_db_time, [:left, 10]],
+        [@view_time, [:left, 10]],
+        [avg_view_time, [:left, 10]],
+        [simplified_url, [:left, 40]],
+      ]
+    end
+
+    def export_header_settings
+      %w{
+        total_hits
+        total_time
+        avg_total_time
+        db_time
+        avg_db_time
+        view_time
+        avg_view_time
+        simplified_url
+      }
+    end
+
+    def export_headers
+      export_header_settings.collect { |header| header.ljust(20) }.join('')
+    end
+
+    def export
+      export_settings.collect do |value, setting|
+        if setting.first == :left
+          value.to_s.ljust(setting[1])
+        else
+          value.to_s.rjust(setting[1])
+        end
+      end.join('')
+    end
+
+    def avg_total_time
+      return 0 if @total_time == 0
+      (@total_time / @total_hits / 1000.0)
+    end
+
+    def avg_view_time
+      return 0 if @view_time == 0
+      (@view_time / @total_hits / 1000.0)
+    end
+
+    def avg_db_time
+      return 0 if @db_time == 0
+      (@db_time / @total_hits / 1000.0)
+    end
+
   end
 
 end

@@ -14,6 +14,8 @@ class ObjectFileTest < Test::Unit::TestCase
     @changed_simplified_url = 'http://example.com'
     @changed_serialized_data = '1,2,3,4,http://example.com'
     @changed_serialized_data_twice = '2,4,6,8,http://example.com'
+
+    @export_data = '1         2         0.002     4         0.004     3         0.003     http://example.com                      '
   end
 
   def teardown
@@ -99,6 +101,15 @@ class ObjectFileTest < Test::Unit::TestCase
     assert_equal @changed_view_time, @file.view_time, 'view'
     assert_equal @changed_db_time, @file.db_time, 'db'
     assert_equal @changed_hits, @file.total_hits, 'hits'
+  end
+
+  # ============================================================================
+  # DATA EXPORTS
+  # ============================================================================
+
+  should 'export data correctly' do
+    alter_data
+    assert_equal @export_data, @file.export
   end
 
 end
