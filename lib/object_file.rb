@@ -96,17 +96,27 @@ module Plog
       ]
     end
 
-    def export_header_settings
-      %w{
-        total_hits
-        total_time
-        avg_total_time
-        db_time
-        avg_db_time
-        view_time
-        avg_view_time
-        simplified_url
-      }
+    def self.export_header_settings
+      [
+        ['Hits', [:left, 10]],
+        ['Time', [:left, 10]],
+        ['Avg-Time', [:left, 10]],
+        ['DbTime', [:left, 10]],
+        ['Avg-DB', [:left, 10]],
+        ['View', [:left, 10]],
+        ['Avg-View', [:left, 10]],
+        ['Url', [:left, 40]],
+      ]
+    end
+
+    def self.formated_headers
+      export_header_settings.collect do |value, setting|
+        if setting.first == :left
+          value.to_s.ljust(setting[1])
+        else
+          value.to_s.rjust(setting[1])
+        end
+      end.join('') + "\n"
     end
 
     def export_headers

@@ -5,9 +5,9 @@ require 'md5'
 require 'uri'
 
 # required internal libraries
-require 'cli'
-require 'completed_line'
-require 'log_file'
-require 'object_file'
-require 'url'
+require 'lib/cli'
+require 'lib/completed_line'
+require 'lib/log_file'
+require 'lib/object_file'
+require 'lib/url'
 

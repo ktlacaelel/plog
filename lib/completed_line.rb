@@ -13,6 +13,10 @@ module Plog
       URL.new(@url)
     end
 
+    def self.valid?
+      completed_line?
+    end
+
     def self.completed_line?
       return false unless @line.is_a? String
       return false unless COMPLETED_TIME_REGEX =~ @line
