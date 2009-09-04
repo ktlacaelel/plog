@@ -13,6 +13,7 @@ class ObjectFileTest < Test::Unit::TestCase
     @changed_db_time = 4
     @changed_simplified_url = 'http://example.com'
     @changed_serialized_data = '1,2,3,4,http://example.com'
+    @changed_serialized_data_twice = '2,4,6,8,http://example.com'
   end
 
   def teardown
@@ -83,13 +84,21 @@ class ObjectFileTest < Test::Unit::TestCase
     @file.simplified_url = @changed_simplified_url
   end
 
+  # ============================================================================
+  # DATA LOADING
+  # ============================================================================
+
   should 'store altered data & retrive correctly' do
     alter_data
     @file.save_changes!
     @file.close
     @skip_close = true
-    stored_data = File.new(@testing_filename).read.chomp
-    assert_equal @changed_serialized_data, stored_data
+
+    @file = Plog::ObjectFile.new(@testing_filename, 'w+')
+    assert_equal @changed_total_time, @file.total_time, 'total'
+    assert_equal @changed_view_time, @file.view_time, 'view'
+    assert_equal @changed_db_time, @file.db_time, 'db'
+    assert_equal @changed_hits, @file.total_hits, 'hits'
   end
 
 end

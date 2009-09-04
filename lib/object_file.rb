@@ -22,7 +22,7 @@ module Plog
     attr_reader :view_time, :total_time, :db_time, :total_hits
 
     def initialize(*args)
-      @data = ''
+      raw_data(args.first)
       super(*args)
       setup!
     end
@@ -63,8 +63,24 @@ module Plog
     end
 
     def load_changes!
-      return if read == ''
-      @total_hits, @total_time, @view_time, @db_time, @simplified_url = read.split(',')
+      return if @raw_data == ''
+      @total_hits, @total_time, @view_time, @db_time, @simplified_url = @raw_data.split(',')
+      intify!
+    end
+
+    def intify!
+      @total_hits = @total_hits.to_i
+      @total_time = @total_time.to_i
+      @db_time = @db_time.to_i
+      @view_time = @view_time.to_i
+    end
+
+    def raw_data(some_string)
+      if File.exist? some_string
+        @raw_data = File.new(some_string).read
+      else
+        @raw_data = ''
+      end
     end
 
   end
