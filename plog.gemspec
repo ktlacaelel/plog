@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kazuyoshi Tlacaelel"]
   s.date = %q{2009-09-04}
-  s.description = %q{Ruby on Rails Production log statistic builder}
+  s.description = %q{TODO: longer description of your gem}
   s.email = %q{kazu.dev@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
      "lib/cli.rb",
      "lib/completed_line.rb",
      "lib/log_file.rb",
@@ -29,6 +30,7 @@ Gem::Specification.new do |s|
      "lib/plog.rb",
      "lib/url.rb",
      "plog",
+     "plog.gemspec",
      "test/completed_line_test.rb",
      "test/data/example.log",
      "test/log_file_test.rb",
@@ -41,7 +43,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{Plog production log statistics.}
+  s.summary = %q{TODO: one-line summary of your gem}
   s.test_files = [
     "test/completed_line_test.rb",
      "test/log_file_test.rb",
@@ -63,5 +65,4 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<thoughtbot-shoulda>, [">= 0"])
   end
-
 end
