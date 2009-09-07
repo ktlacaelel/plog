@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{plog}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kazuyoshi Tlacaelel"]
   s.date = %q{2009-09-07}
   s.default_executable = %q{plog}
-  s.description = %q{Ruby on Rails production log statistic generator}
+  s.description = %q{Plog - Ruby on Rails production log statistic generator. by Kazuyoshi Tlacaelel}
   s.email = %q{kazu.dev@gmail.com}
   s.executables = ["plog"]
   s.extra_rdoc_files = [
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{Ruby on Rails production log statistic generator}
+  s.summary = %q{Plog - Ruby on Rails production log statistic generator. by Kazuyoshi Tlacaelel}
   s.test_files = [
     "test/completed_line_test.rb",
      "test/log_file_test.rb",
