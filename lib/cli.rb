@@ -75,7 +75,7 @@ module Plog
     end
 
     def stdout(string)
-      puts ' ** ' + string
+      puts ' ---> ' + string
     end
 
     # ==========================================================================
@@ -83,8 +83,7 @@ module Plog
     # ==========================================================================
 
     def notice_banner
-      '
-      Parsing logs...
+      'Parsing logs...
       This may take a long-while, go get yourself a coffee!
       While I hanlde this stuff for you.
       '
