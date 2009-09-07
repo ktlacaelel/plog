@@ -18,7 +18,7 @@ module Plog
     end
 
     def run!
-      stdout count_of_logs_banner @log_files.size
+      stdout count_of_logs_banner(@log_files.size)
       stdout notice_banner
       create_object_files
       destroy_old_log_file
@@ -39,7 +39,7 @@ module Plog
 
     def create_object_files
       @log_files.each do |log_file|
-        stdout parsing_log_file_banner log_file.name
+        stdout parsing_log_file_banner(log_file.name)
         log_file.parse_completed_lines!
       end
     end
@@ -70,7 +70,7 @@ module Plog
     def load_log_files!
       Dir.glob(File.join(@directory, '*.log')).each do |log_file|
         @log_files << LogFile.new(log_file)
-        stdout loading_log_file_banner log_file
+        stdout loading_log_file_banner(log_file)
       end
     end
 

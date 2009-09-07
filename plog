@@ -1,6 +1,0 @@
-#!/home/jognote/ruby/bin/ruby
-
-require 'rubygems'
-require 'lib/plog'
-
-Plog::Cli.new(ARGV[0]).run!

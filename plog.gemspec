@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kazuyoshi Tlacaelel"]
   s.date = %q{2009-09-04}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Ruby on Rails production log statistic-generator}
   s.email = %q{kazu.dev@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE",
@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
      "lib/object_file.rb",
      "lib/plog.rb",
      "lib/url.rb",
-     "plog",
      "plog.gemspec",
      "test/completed_line_test.rb",
      "test/data/example.log",
@@ -39,11 +38,14 @@ Gem::Specification.new do |s|
      "test/test_helper.rb",
      "test/url_test.rb"
   ]
+  s.executables = [
+     "plog"
+  ]
   s.homepage = %q{http://github.com/ktlacaelel/plog}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Ruby on Rails production log statistics}
   s.test_files = [
     "test/completed_line_test.rb",
      "test/log_file_test.rb",

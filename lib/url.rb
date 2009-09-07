@@ -4,7 +4,7 @@ module Plog
 
     def initialize(url)
       @url = url
-      @obj = URI.parse(URI.escape url)
+      @obj = URI.parse URI.escape(url)
     end
 
     def to_s

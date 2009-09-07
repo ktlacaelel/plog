@@ -1,0 +1,22 @@
+#!/home/jognote/ruby/bin/ruby
+
+require 'rubygems'
+require 'plog'
+
+banner = '
+ERROR!
+  No logs given, I have nothing to do!
+
+HELP?
+  The "plog" ( production log ) executable receives one option.
+  This must be a directory containing one or more production logs.
+  Only logs in the first level will be parsed.
+  Recursive reading is not allowed
+
+USAGE:
+  $ plog directory_with_logs/
+
+'
+
+abort banner if ARGV.size != 1
+Plog::Cli.new(ARGV[0]).run!
