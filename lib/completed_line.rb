@@ -97,7 +97,6 @@ module Plog
     end
 
     def self.extract_status_number_and_string
-      return 0 unless STATUS_REGEX =~ @second_fragment
       @second_fragment.gsub(STATUS_REGEX, '\2,\4').split(',')
     end
 
