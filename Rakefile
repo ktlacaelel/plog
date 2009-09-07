@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "plog"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Plog - Ruby on Rails production log statistic generator. by Kazuyoshi Tlacaelel}
+    gem.description = %Q{Plog - Ruby on Rails production log statistic generator. by Kazuyoshi Tlacaelel}
     gem.email = "kazu.dev@gmail.com"
     gem.homepage = "http://github.com/ktlacaelel/plog"
     gem.authors = ["Kazuyoshi Tlacaelel"]

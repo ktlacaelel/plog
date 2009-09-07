@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Kazuyoshi Tlacaelel"]
   s.date = %q{2009-09-07}
   s.default_executable = %q{plog}
-  s.description = %q{TODO: longer description of your gem}
+  s.description = %q{Ruby on Rails production log statistic generator}
   s.email = %q{kazu.dev@gmail.com}
   s.executables = ["plog"]
   s.extra_rdoc_files = [
@@ -45,7 +45,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.3}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Ruby on Rails production log statistic generator}
   s.test_files = [
     "test/completed_line_test.rb",
      "test/log_file_test.rb",
