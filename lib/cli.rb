@@ -4,7 +4,7 @@ module Plog
 
     attr_reader :source_directory, :log_files
 
-    LOG_FILE = 'statistics.txt'
+    STATS_FILE = 'statistics.txt'
 
     # ==========================================================================
     # CLIENT INTERFACE
@@ -58,7 +58,7 @@ module Plog
     end
 
     def statistic_file_path
-      File.join(@target_directory, LOG_FILE)
+      File.join(@target_directory, STATS_FILE)
     end
 
     def destroy_old_log_file
