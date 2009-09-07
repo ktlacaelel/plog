@@ -4,6 +4,11 @@ Ruby on Rails production log statistics generator.
 
 by Kazuyoshi Tlacaelel.
 
+    $ plog my_directory_with_production_logs/
+    $ ls plog/
+    objects     statistics.txt
+
+
 == Copyright
 
 Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
@@ -55,6 +60,10 @@ Compiles statistics in a easy to read manner
     797       971882    1.219     414829    0.52      423130    0.53      /user/[0-9]/articles/friends?
     122       20830     0.17      7081      0.058     10291     0.084     /user/[0-9]/topics?
 
+== INSTALLATION
+
+    $ gem sources -a http://gems.github.com
+    $ gem install ktlacaelel-plog
 
 == KNOWN BUGS:
   none, so far..
