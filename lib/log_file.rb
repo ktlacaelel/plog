@@ -2,16 +2,19 @@ module Plog
 
   class LogFile < File
 
-    DUMP_DIR = 'objects'
-
     attr_accessor :name
 
-    def initialize(file)
-      unless File.exist? DUMP_DIR
-        Dir.mkdir DUMP_DIR
-      end
+    def initialize(file, dump_dir)
+      @dump_dir = dump_dir
+      check_dump_dir_consistency!
       super(file, 'r')
       @name = file
+    end
+
+    def check_dump_dir_consistency!
+      unless File.exist? objects_recipient_path
+        FileUtils.mkdir_p objects_recipient_path
+      end
     end
 
     def validate(file)
@@ -21,12 +24,11 @@ module Plog
     def parse_completed_lines!
       each_line do |line|
         CompletedLine.read! line
-        parse_completed_line
+        parse_completed_line if CompletedLine.valid?
       end
     end
 
     def parse_completed_line
-      return unless CompletedLine.valid?
       of = ObjectFile.new(object_path, 'w+')
       of.simplified_url = CompletedLine.url.simplify
       of.append_total_time CompletedLine.total_time
@@ -38,7 +40,11 @@ module Plog
     end
 
     def object_path
-      File.join(DUMP_DIR, CompletedLine.url.hashify)
+      File.join(objects_recipient_path, CompletedLine.url.hashify)
+    end
+
+    def objects_recipient_path
+      @objects_recipient_path ||= File.join(@dump_dir, 'objects')
     end
 
   end

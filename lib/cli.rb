@@ -2,19 +2,20 @@ module Plog
 
   class Cli
 
-    attr_reader :directory, :log_files
+    attr_reader :source_directory, :log_files
 
-    LOG_FILE = 'log_statistics.txt'
+    LOG_FILE = 'statistics.txt'
 
     # ==========================================================================
     # CLIENT INTERFACE
     # ==========================================================================
 
-    def initialize(directory)
-      @directory = directory
+    def initialize(source_directory, target_directory)
       @log_files = []
-      validate!
-      load_log_files!
+      @source_directory = source_directory
+      @target_directory = target_directory
+      check_directory_consistency!
+      preload_log_files!
     end
 
     def run!
@@ -45,31 +46,40 @@ module Plog
     end
 
     def parse_object_files
-      Dir.glob('objects/*').each do |object_file|
-        file = File.new(LOG_FILE, 'a+')
+      Dir.glob(object_file_pattern).each do |object_file|
+        file = File.new(statistic_file_path, 'a+')
         file.puts trim(ObjectFile.new(object_file).export)
         file.close
       end
     end
 
+    def object_file_pattern
+      File.join(@target_directory, 'objects') + '/*'
+    end
+
+    def statistic_file_path
+      File.join(@target_directory, LOG_FILE)
+    end
+
     def destroy_old_log_file
-      FileUtils.touch LOG_FILE
-      FileUtils.rm LOG_FILE
+      FileUtils.touch statistic_file_path
+      FileUtils.rm statistic_file_path
     end
 
     def append_headers_to_log_file
-      file = File.new(LOG_FILE, 'a+')
+      file = File.new(statistic_file_path, 'a+')
       file.puts trim(ObjectFile.formated_headers)
       file.close
     end
 
-    def validate!
-      abort directory_not_found_banner unless File.exist? @directory
+    def check_directory_consistency!
+      abort directory_not_found_banner unless File.exist? @source_directory
     end
 
-    def load_log_files!
-      Dir.glob(File.join(@directory, '*.log')).each do |log_file|
-        @log_files << LogFile.new(log_file)
+    def preload_log_files!
+      Dir.glob(File.join(@source_directory, '*.log')).each do |log_file|
+        puts @target_directory
+        @log_files << LogFile.new(log_file, @target_directory)
         stdout loading_log_file_banner(log_file)
       end
     end
@@ -102,7 +112,7 @@ module Plog
     end
 
     def directory_not_found_banner
-      'No such dir: %s' % @directory
+      'No such dir: %s' % @source_directory
     end
 
   end

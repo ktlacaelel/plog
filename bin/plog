@@ -19,4 +19,4 @@ USAGE:
 '
 
 abort banner if ARGV.size != 1
-Plog::Cli.new(ARGV[0]).run!
+Plog::Cli.new(ARGV[0], 'plog').run!
