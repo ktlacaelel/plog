@@ -78,7 +78,6 @@ module Plog
 
     def preload_log_files!
       Dir.glob(File.join(@source_directory, '*.log')).each do |log_file|
-        puts @target_directory
         @log_files << LogFile.new(log_file, @target_directory)
         stdout loading_log_file_banner(log_file)
       end
