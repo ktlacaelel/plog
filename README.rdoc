@@ -1,13 +1,27 @@
-= plog
+= Plog
 
-Description goes here.
+Ruby on Rails *Production-Log* statistics generator.
+by Kazuyoshi Tlacaelel.
+
+== Usage:
+
+    HELP?
+      The "plog" ( production log ) executable receives one option.
+      This must be a directory containing one or more production logs.
+      Only logs in the first level will be parsed.
+      Recursive reading is not allowed
+
+    USAGE:
+      $ plog directory_with_logs/
+
 
 == Note on Patches/Pull Requests
- 
+
+* Send me a brief message
 * Fork the project.
-* Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
   future version unintentionally.
+* Make your feature addition or bug fix.
 * Commit, do not mess with rakefile, version, or history.
   (if you want to have your own version, that is fine but
    bump version in a commit by itself I can ignore when I pull)
@@ -16,3 +30,5 @@ Description goes here.
 == Copyright
 
 Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
+
+The end.
