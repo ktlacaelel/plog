@@ -1,21 +1,29 @@
 = Plog
 
-Ruby on Rails *Production-Log* statistics generator.
+Ruby on Rails production log statistics generator.
+
 by Kazuyoshi Tlacaelel.
 
-== Usage:
+== Copyright
 
-    HELP?
-      The "plog" ( production log ) executable receives one option.
-      This must be a directory containing one or more production logs.
-      Only logs in the first level will be parsed.
-      Recursive reading is not allowed
+Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
 
-    USAGE:
-      $ plog directory_with_logs/
+== DEPENDANCIES:
 
+  * FileUtils
+  * MD5
+  * File
+  * Dir
+  * URI
+  * rubygems 1.3.3
 
-== Note on Patches/Pull Requests
+== KNOWN BUGS:
+  none, so far..
+
+== LICENSE:
+  MIT. See the "LICENSE" file for details.
+
+== Participate
 
 * Send me a brief message
 * Fork the project.
@@ -27,8 +35,49 @@ by Kazuyoshi Tlacaelel.
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
+== OUTPUT:
 
-Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
+All output is packed in a plog directory, from wherever you run
+the "plog" executable.
 
-The end.
+Inside this directory you'll find a directory called objects.
+wich contains many small files called "object-files"
+this files contain all the parsed statistics of you log files.
+
+The information is scattered and can be reused for future compilations
+meaning that new compilations data will merge with the existing one.
+
+all data in these "object-files" is read and summarized into a
+statistics.txt file found inside of the plog directory.
+
+== SORTING:
+  Comming soon!
+
+== TESTS:
+
+  * 70% tested, with shoulda
+  * all core areas of the api are tested, and tests pass!
+  * only the cli part of the api has no tests, but will be implemented soon
+
+== Usage:
+
+The "plog" ( production log ) executable receives one option.
+This must be a directory containing one or more production logs.
+Only logs in the first level will be parsed.
+Recursive reading is not allowed
+
+    $ plog directory_with_logs/
+
+== WORKS ON:
+
+  * OSX Darwin utopia.local 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386
+  * UBUNTU Linux utopia.local 2.6.28-11-server #42-Ubuntu SMP Fri Apr 17 02:45:36 UTC 2009 x86_64 GNU/Linux
+
+  * OSX ruby 1.8.6 (2008-08-11 patchlevel 287) [universal-darwin9.0]
+  * UBUNTU ruby 1.8.7 (2009-06-12 patchlevel 174) [x86_64-linux]
+
+  * rubygems 1.3.4
+  * rubygems 1.3.3
+
+== The end.
+
