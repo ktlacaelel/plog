@@ -8,6 +8,28 @@ by Kazuyoshi Tlacaelel.
 
 Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
 
+== COMMING SOON!
+
+Comming soon to a terminal near you!
+
+  * sorting:
+  * more statistics
+    (hits, number of hits per response type like 200, 302 etc)
+
+May be... but don't expect any of these to become a reality
+I love programming and tons of ideas flow in my head with posibilities
+but I do not have the time! :(
+
+  * Different export drivers?
+    (should be another plugin)
+
+  * cli options abstracted into classes so they can be aggregated with ease
+    (this might be cool)
+
+  * google charts integration
+    (is too much for this api)
+    (may be as a different plugin)
+
 == DEPENDANCIES:
 
   * FileUtils
@@ -16,6 +38,23 @@ Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
   * Dir
   * URI
   * rubygems 1.3.3
+
+== FEATURES:
+
+Compiles statistics in a easy to read manner
+
+
+    Hits      Time      Avg-Time  DbTime    Avg-DB    View      Avg-View  Url
+    93        18057     0.194     5775      0.062     10437     0.112     /users/[0-9]
+    12        277       0.023     193       0.016     0         0         /user_themes/update
+    1         290       0.29      107       0.107     175       0.175     /posts
+    3         99        0.033     57        0.019     0         0         /comments
+    82        11922     0.145     5969      0.072     4979      0.06      /user/[0-9]/comments
+    1868      1301006   0.696     623246    0.333     491474    0.263     /user/[0-9]/posts?
+    1         72        0.072     39        0.039     0         0         /confirm_destroy_account/[0-9]?
+    797       971882    1.219     414829    0.52      423130    0.53      /user/[0-9]/articles/friends?
+    122       20830     0.17      7081      0.058     10291     0.084     /user/[0-9]/topics?
+
 
 == KNOWN BUGS:
   none, so far..
@@ -49,9 +88,6 @@ meaning that new compilations data will merge with the existing one.
 
 all data in these "object-files" is read and summarized into a
 statistics.txt file found inside of the plog directory.
-
-== SORTING:
-  Comming soon!
 
 == TESTS:
 
