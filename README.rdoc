@@ -13,9 +13,9 @@ by Kazuyoshi Tlacaelel.
 
 Copyright (c) 2009 Kazuyoshi Tlacaelel. See LICENSE for details.
 
-== COMMING SOON!
+== Comming soon!
 
-Comming soon to a terminal near you!
+comming soon to a terminal near you!
 
   * sorting:
   * more statistics
@@ -35,7 +35,7 @@ but I do not have the time! :(
     (is too much for this api)
     (may be as a different plugin)
 
-== DEPENDANCIES:
+== Dependancies:
 
   * FileUtils
   * MD5
@@ -44,7 +44,7 @@ but I do not have the time! :(
   * URI
   * rubygems 1.3.3
 
-== FEATURES:
+== Features:
 
 Compiles statistics in a easy to read manner
 
@@ -60,15 +60,15 @@ Compiles statistics in a easy to read manner
     797       971882    1.219     414829    0.52      423130    0.53      /user/[0-9]/articles/friends?
     122       20830     0.17      7081      0.058     10291     0.084     /user/[0-9]/topics?
 
-== INSTALLATION
+== Installation
 
     $ gem sources -a http://gems.github.com
     $ gem install ktlacaelel-plog
 
-== KNOWN BUGS:
+== Known bugs:
   none, so far..
 
-== LICENSE:
+== License:
   MIT. See the "LICENSE" file for details.
 
 == Participate
@@ -83,7 +83,7 @@ Compiles statistics in a easy to read manner
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== OUTPUT:
+== Output:
 
 All output is packed in a plog directory, from wherever you run
 the "plog" executable.
@@ -98,7 +98,7 @@ meaning that new compilations data will merge with the existing one.
 all data in these "object-files" is read and summarized into a
 statistics.txt file found inside of the plog directory.
 
-== TESTS:
+== Tests:
 
   * 70% tested, with shoulda
   * all core areas of the api are tested, and tests pass!
@@ -113,7 +113,7 @@ Recursive reading is not allowed
 
     $ plog directory_with_logs/
 
-== WORKS ON:
+== Works on:
 
   * OSX Darwin utopia.local 9.8.0 Darwin Kernel Version 9.8.0: Wed Jul 15 16:55:01 PDT 2009; root:xnu-1228.15.4~1/RELEASE_I386 i386
   * UBUNTU Linux utopia.local 2.6.28-11-server #42-Ubuntu SMP Fri Apr 17 02:45:36 UTC 2009 x86_64 GNU/Linux
