@@ -84,9 +84,8 @@ module Plog
 
     def notice_banner
       '
-      NOTICE:
-
-      Parsing logs, this may take a logn-while go get yourself a coffe!
+      Parsing logs...
+      This may take a long-while, go get yourself a coffee!
       While I hanlde this stuff for you.
       '
     end
