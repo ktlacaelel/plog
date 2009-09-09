@@ -60,6 +60,26 @@ Compiles statistics in a easy to read manner
     797       971882    1.219     414829    0.52      423130    0.53      /user/[0-9]/articles/friends?
     122       20830     0.17      7081      0.058     10291     0.084     /user/[0-9]/topics?
 
+== Improvized twicks:
+
+You can improvize some quick sorting using the command line like:
+
+    cat plog/statistics.txt | head -n1 > some_file.txt
+    cat plog/statistics.txt | sort -nr >> some_file.txt
+
+This will create a new file with sorted results by hits for you!
+
+    Hits      Time      Avg-Time  DbTime    Avg-DB    View      Avg-View  Url
+    1868      1301006   0.696     623246    0.333     491474    0.263     /user/[0-9]/posts?
+    797       971882    1.219     414829    0.52      423130    0.53      /user/[0-9]/articles/friends?
+    122       20830     0.17      7081      0.058     10291     0.084     /user/[0-9]/topics?
+    93        18057     0.194     5775      0.062     10437     0.112     /users/[0-9]
+    82        11922     0.145     5969      0.072     4979      0.06      /user/[0-9]/comments
+    12        277       0.023     193       0.016     0         0         /user_themes/update
+    3         99        0.033     57        0.019     0         0         /comments
+    1         72        0.072     39        0.039     0         0         /confirm_destroy_account/[0-9]?
+    1         290       0.29      107       0.107     175       0.175     /posts
+
 == Installation
 
     $ gem sources -a http://gems.github.com
