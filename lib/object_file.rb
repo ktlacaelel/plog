@@ -86,11 +86,11 @@ module Plog
     def export_settings
       [
         [@total_hits, [:left, 10]],
-        [@total_time, [:left, 10]],
+        [total_time_in_secs, [:left, 10]],
         [avg_total_time, [:left, 10]],
-        [@db_time, [:left, 10]],
+        [db_time_in_secs, [:left, 10]],
         [avg_db_time, [:left, 10]],
-        [@view_time, [:left, 10]],
+        [view_time_in_secs, [:left, 10]],
         [avg_view_time, [:left, 10]],
         [simplified_url, [:left, 40]],
       ]
@@ -146,6 +146,18 @@ module Plog
     def avg_db_time
       return 0 if @db_time == 0
       (@db_time / @total_hits / 1000.0)
+    end
+
+    def total_time_in_secs
+      @total_time / 1000.0
+    end
+
+    def db_time_in_secs
+      @db_time / 1000.0
+    end
+
+    def view_time_in_secs
+      @view_time / 1000.0
     end
 
   end
