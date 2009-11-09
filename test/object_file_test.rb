@@ -15,7 +15,7 @@ class ObjectFileTest < Test::Unit::TestCase
     @changed_serialized_data = '1,2,3,4,http://example.com'
     @changed_serialized_data_twice = '2,4,6,8,http://example.com'
 
-    @export_data = '1         0.002     0.002     0.004     0.004     0.003     0.003     http://example.com                      '
+    @export_data = '1              0.002          0.002          0.004          0.004          0.003          0.003          http://example.com                      '
   end
 
   def teardown
