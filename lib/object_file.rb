@@ -85,26 +85,26 @@ module Plog
 
     def export_settings
       [
-        [@total_hits, [:left, 10]],
-        [total_time_in_secs, [:left, 10]],
-        [avg_total_time, [:left, 10]],
-        [db_time_in_secs, [:left, 10]],
-        [avg_db_time, [:left, 10]],
-        [view_time_in_secs, [:left, 10]],
-        [avg_view_time, [:left, 10]],
+        [@total_hits, [:left, 15]],
+        [total_time_in_secs, [:left, 15]],
+        [avg_total_time, [:left, 15]],
+        [db_time_in_secs, [:left, 15]],
+        [avg_db_time, [:left, 15]],
+        [view_time_in_secs, [:left, 15]],
+        [avg_view_time, [:left, 15]],
         [simplified_url, [:left, 40]],
       ]
     end
 
     def self.export_header_settings
       [
-        ['Hits', [:left, 10]],
-        ['Time', [:left, 10]],
-        ['Avg-Time', [:left, 10]],
-        ['DbTime', [:left, 10]],
-        ['Avg-DB', [:left, 10]],
-        ['View', [:left, 10]],
-        ['Avg-View', [:left, 10]],
+        ['Hits', [:left, 15]],
+        ['Time', [:left, 15]],
+        ['Avg-Time', [:left, 15]],
+        ['DbTime', [:left, 15]],
+        ['Avg-DB', [:left, 15]],
+        ['View', [:left, 15]],
+        ['Avg-View', [:left, 15]],
         ['Url', [:left, 40]],
       ]
     end
