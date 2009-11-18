@@ -54,3 +54,9 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+desc 'Generate code statistics'
+task :stats do
+  require 'code_statistics'
+  CodeStatistics.new(['Plog', 'lib'], ['Tests', 'test']).to_s
+end
