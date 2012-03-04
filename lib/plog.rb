@@ -1,13 +1,8 @@
-
-# required external libraries
-require 'fileutils'
-require 'md5'
-require 'uri'
-
-# required internal libraries
-require 'cli'
-require 'completed_line'
-require 'log_file'
-require 'object_file'
-require 'url'
+require 'yaml'
+require 'rubygems'
+require 'active_record'
+require 'active_support'
+require 'plog/record_abstraction'
+require 'plog/scanner'
+require 'plog/parser'
 
